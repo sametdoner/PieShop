@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Application.Models;
+using Application.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -23,7 +24,11 @@ namespace Application.Controllers
 
 		public ViewResult List()
 		{
-			return View(_pieRepository.Pies);
+			PieListViewModel piesListViewModel = new PieListViewModel();
+			piesListViewModel.Pies = _pieRepository.Pies;
+
+			piesListViewModel.CurrentCategory = "Cheese Cakes";
+			return View(piesListViewModel);
 		}
 	}
 
