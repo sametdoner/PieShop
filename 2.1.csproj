@@ -6,15 +6,12 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\" />
-    <Folder Include="Components\" />
-    <Folder Include="Components\Components\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
     <Folder Include="Views\" />
-    <Folder Include="Views\Pie\" />
+    <Folder Include="Views\Home\" />
     <Folder Include="Views\Shared\" />
     <Folder Include="ViewModels\" />
-    <Folder Include="wwwroot\Content\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,6 +20,18 @@
       <Publish Condition="'%(PackageReference.Version)' == ''">true</Publish>
     </PackageReference>
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.1">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNet.Providers.LocalDb" Version="2.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Remove="Views\Home\index.cshtml" />
+    <Content Remove="Views\Home\index.cshtml" />
+    <Content Remove="Views\Home\list.cshtml" />
+  </ItemGroup>
 </Project>
